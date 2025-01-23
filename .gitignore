@@ -48,3 +48,4 @@ build/
 ### Mac OS ###
 .DS_Store
 .env
+src/main/resources/application.properties
