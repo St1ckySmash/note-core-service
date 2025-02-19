@@ -32,9 +32,8 @@ public class NoteController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Note> updateNote(@PathVariable(value = "id") Long noteId, @RequestBody Note noteDetails) {
-        return noteService.updateNote(noteId, noteDetails) != null
-                ? ResponseEntity.ok(noteService.updateNote(noteId, noteDetails))
-                : ResponseEntity.notFound().build();
+        Note updatedNote = noteService.updateNote(noteId, noteDetails);
+        return updatedNote != null ? ResponseEntity.ok(updatedNote) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/{id}")
